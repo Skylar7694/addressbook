@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+      <tr v-for="contact in contacts" @click="current = contact">
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.lastName }}</td>
+        <td>{{ contact.email }}</td>
+      </tr>
+    </table>
+    <pre id="modal" v-if="current">{{ current }}</pre>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./address.js"></script>
+
+</html>
