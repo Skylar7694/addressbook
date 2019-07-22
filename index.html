@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>addressbook</title>
-        <script src="address.js"></script>
-    </head>
-    <body>
-        <div class="addresses">
 
-        </div>
-        <div id="navigation">
-    <ul class="nav-list">
-        <script>
-            listContacts();
-            showContacts();
-        </script>
-    </ul>
-</div>
+<head>
+    <meta charset="utf-8">
+    <title>addressbook</title>
+    <script src="address.js"></script>
+</head>
+
+<body>
+    <div class="addresses">
+
+    </div>
+    <div id="navigation">
+        <ul class="nav-list" id="list">
+        </ul>
+    </div>
 
     <div id="contact-panel" class="panel">
-        <form id="contact" action="#">
+        <form id="contact" action="#" onsubmit="event.preventDefault();  addContact()">
             <h1>Add a new contact</h1>
             <div>
-                    <img src="default.html" alt="">
+                <img src="default.html" alt="">
 
-                    <input type="text" name="person" id="firstName" placeholder="John " />
+                <input type="text" name="firstName" id="firstName" placeholder="John " />
 
-                    <input type="text" name="phone" id="lastName" placeholder="Smith" />
+                <input type="text" name="lastName" id="lastName" placeholder="Smith" />
 
-                    <input type="text" name="email" id="phoneNum" placeholder="1234567" />
+                <input type="text" name="phoneNum" id="phoneNum" placeholder="1234567" />
 
-                    <input type="text" name="email" id="email" placeholder="john@example.com" />
+                <input type="text" name="email" id="email" placeholder="john@example.com" />
 
             </div>
             <div>
-                <input type="submit" value="Submit" onsubmit="return person"  />
+                <input type="submit" value="Submit" />
             </div>
         </form>
     </div>
 
+    <div id="details"></div>
 
-    </body>
+    <script>
+        showContacts()
+    </script>
+</body>
+
 </html>
